@@ -102,6 +102,23 @@ VALUES
     (731166526, '2022-05-02', 'Volvo V60', 'Abhi Thompson', 'SP005'),
     (271135104, '2023-05-03', 'Ford Fusion', 'Sana Rod', 'SP001');
 
+USE dealership_company; 
 
 SELECT *
-FROM dealership_company.invoice;
+FROM cars;
+
+SELECT *
+FROM invoice;
+
+SELECT *
+FROM salespersons;
+
+
+
+SELECT dealership_company.salespersons.Name AS employee_name, dealership_company.salespersons.Store, dealership_company.invoice.Invoice_number, dealership_company.invoice.Date, dealership_company.invoice.car, dealership_company.invoice.Customer_name, dealership_company.invoice.Sales_Person
+FROM dealership_company.salespersons
+JOIN dealership_company.invoice
+ON dealership_company.salespersons.Staff_id = dealership_company.invoice.Sales_Person;
+
+
+ 
